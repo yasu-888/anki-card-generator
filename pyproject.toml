@@ -1,0 +1,14 @@
+[project]
+name = "anki-card-generator-public"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "flask==2.3.3",
+    "functions-framework==3.4.0",
+    "google-genai==1.5.0",
+    "gtts==2.5.4",
+    "pydantic==2.10.6",
+    "requests>=2.32.5",
+]
