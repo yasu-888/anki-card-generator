@@ -1,0 +1,223 @@
+<style>
+  * {
+    box-sizing: border-box;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+  }
+  
+  html, body {
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+    height: auto !important;
+    min-height: 100% !important;
+    overflow-y: visible !important;
+  }
+  
+  body {
+    padding: 15px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    padding: 25px;
+    position: relative;
+    height: auto !important;
+    overflow: visible !important;
+  }
+  
+  .sentence {
+    font-size: 20px;
+    font-weight: 500;
+    color: #212529;
+    line-height: 1.4;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #e9ecef;
+  }
+  
+  .word-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .part-of-speech {
+    font-weight: bold;
+    color: #28a745;
+    font-size: 15px;
+    background-color: rgba(40, 167, 69, 0.1);
+    padding: 3px 10px;
+    border-radius: 4px;
+  }
+  
+  .ipa {
+    font-size: 15px;
+    color: #495057;
+    font-style: italic;
+  }
+  
+  .definition {
+    font-size: 17px;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #eeeeee;
+    border-radius: 4px;
+  }
+  
+  .section-title {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #6c757d;
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+
+  .example {
+    background-color: #f8f9fa;
+    border-left: 3px solid #17a2b8;
+    padding-left: 12px;
+    padding: 12px 0;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .image-container {
+    margin: 15px 0;
+    text-align: center;
+  }
+
+  .jp-section {
+    background-color: white;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: visible !important;
+    height: auto !important;
+  }
+  
+  .japan-flag-container {
+    position: relative;
+    z-index: 1;
+    overflow: visible !important;
+  }
+  
+  .japan-flag-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    opacity: 0.2;
+    z-index: -1;
+  }
+  
+  .japan-flag-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 120px;
+    background-color: #bc002d;
+    border-radius: 50%;
+  }
+
+  .jp-content {
+    position: relative;
+    z-index: 2;
+    padding: 12px;
+    overflow: visible !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    min-height: 120px;
+  }
+
+  .jp {
+    font-size: 16px;
+    color: #343a40;
+    margin: 0;
+  }
+
+  .jp-meaning {
+    font-size: 16px;
+    color: #343a40;
+    margin: 0;
+  }
+  
+  /* モバイル対応のためのメディアクエリ */
+  @media (max-width: 768px) {
+    .card {
+      padding: 15px;
+    }
+  }
+
+  /* Ankiのスタイルを上書き */
+  #outer {
+    overflow: visible !important;
+    height: auto !important;
+  }
+  
+  #inner {
+    overflow: visible !important;
+    height: auto !important;
+  }
+  
+  /* iOS Ankiアプリ用の追加設定 */
+  .ios #qa {
+    overflow: visible !important;
+    height: auto !important;
+  }
+  
+  /* Android Ankiアプリ用の追加設定 */
+  .android #qa {
+    overflow: visible !important;
+    height: auto !important;
+  }
+</style>
+
+<div class="card">
+  <!-- Main Content -->
+  <div class="sentence">{{Sentence}}</div>
+
+  <!-- Word Info -->
+  <div class="word-info">
+    <div class="part-of-speech">{{PartOfSpeech}}</div>
+    <div class="ipa">{{IPA}}</div>
+  </div>
+
+  <!-- Image -->
+  <div class="image-container">{{Image}}</div>
+
+  <!-- Definition -->
+  <div class="definition">{{Definition}}</div>
+
+  <!-- Example Sentence -->
+  <div class="example">
+    {{ExampleSentence}}
+  </div>
+
+  <!-- Japanese Translation with Japanese Flag Design -->
+  <div class="jp-section">
+    <div class="section-title">Japanese</div>
+    <div class="japan-flag-container">
+      <div class="japan-flag-background">
+        <div class="japan-flag-circle"></div>
+      </div>
+      <div class="jp-content">
+        <div class="jp">{{Japanese}}</div>
+        <div class="jp-meaning">{{JapaneseMeaning}}</div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>

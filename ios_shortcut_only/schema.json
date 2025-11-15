@@ -1,0 +1,20 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "translation": { "type": "string", "description": "[日本語必須] この場面の意訳" },
+    "english_definition":     { "type": "string", "description": "[ENGLISH ONLY] 簡潔な英英定義(≤30語推奨)" },
+    "japanese_meaning":       { "type": "string", "description": "[日本語必須] 文脈上の最適訳と説明" },
+    "ipa":                    { "type": "string", "description": "発音記号(米)" },
+    "part_of_speech":         { "type": "string", "description": "[ENGLISH ONLY] 品詞" },
+    "example_sentence":       { "type": "string", "description": "[英語+日本語] 例文「英語文（日本語訳）」" }
+  },
+  "required": [
+    "translation",
+    "english_definition",
+    "japanese_meaning",
+    "ipa",
+    "part_of_speech",
+    "example_sentence"
+  ]
+}
